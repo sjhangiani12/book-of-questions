@@ -27,7 +27,7 @@ def bot():
     resp = MessagingResponse()
     msg = resp.message()
     responded = False
-    msg_to_send = f"Sent this message: {incoming_msg}"
+    msg_to_send = str(question)
     msg.body(msg_to_send)
     return str(resp)
 
