@@ -1,7 +1,7 @@
 
 from flask import Flask, request
 import requests
-from twilio.twiml.messaging_response import MessagingResponse
+# from twilio.twiml.messaging_response import MessagingResponse
 from waitress import serve
 from error import InvalidUsage
 import pandas as pd
