@@ -26,10 +26,16 @@ def bot():
     incoming_msg = request.values.get("Body", "").lower()
     resp = MessagingResponse()
     msg = resp.message()
-    responded = False
-    msg_to_send = str(get_random_question())
-    msg.body(msg_to_send)
+    if "get question" in incoming_msg:
+        msg_to_send = str(get_random_question())
+        msg.body(msg_to_send)
+    else:
+        msg.body("Hey! This chat bot has one function: Say 'Get Question' if you want to get a random question to ponder with friends.")
     return str(resp)
+
+
+
+
 
 
 if __name__ == "__main__":
