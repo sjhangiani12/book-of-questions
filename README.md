@@ -7,4 +7,3 @@ The application currently supports 1 command:
 
 Ponder is built using Twilio, Flask, Heroku. Twilio serves as the SMS proivder, which is powerved via a webhook to the Flask server on Heroku. 
 
-![Screenshot](screenshot.jpeg)
