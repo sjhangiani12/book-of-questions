@@ -7,19 +7,17 @@ from error import InvalidUsage
 import pandas as pd
 import random
 
-def get_random_question():
-    df = pd.read_csv("cleaned_questions.csv")
-    # generate some integers
-    # value = randint(0, len(df))
-    value = random.randint(0,len(df))
-    question = df.iloc[value][1]
-    return question
-
 app = Flask(__name__)
 
 @app.route("/", methods=["GET"])
 def ping():
     return "Jarvis, start the engines."
+
+def get_random_question():
+    df = pd.read_csv("cleaned_questions.csv")
+    value = random.randint(0,len(df))
+    question = df.iloc[value][1]
+    return question
 
 @app.route("/bot", methods=["POST"])
 def bot():
@@ -32,11 +30,6 @@ def bot():
     else:
         msg.body("Hey! This chat bot has one function: Say 'Get Question' if you want to get a random question to ponder with friends.")
     return str(resp)
-
-
-
-
-
 
 if __name__ == "__main__":
     app.run()
