@@ -6,13 +6,13 @@ from error import InvalidUsage
 import pandas as pd
 import random
 
-def get_random_question():
-    df = pd.read_csv("cleaned_questions.csv")
-    # generate some integers
-    # value = randint(0, len(df))
-    value = random.randint(0,len(df))
-    question = df.iloc[value][1]
-    return question
+# def get_random_question():
+#     df = pd.read_csv("cleaned_questions.csv")
+#     # generate some integers
+#     # value = randint(0, len(df))
+#     value = random.randint(0,len(df))
+#     question = df.iloc[value][1]
+#     return question
 
 app = Flask(__name__)
 
