@@ -28,7 +28,7 @@ def bot():
         msg_to_send = str(get_random_question())
         msg.body(msg_to_send)
     else:
-        msg.body("Hey! This chat bot has one function: Say 'Get Question' if you want to get a random question to ponder with friends.")
+        msg.body("Hey! This chat bot has one function: Say 'Get Question' or 'gq' if you want to get a random question to ponder with friends.")
     return str(resp)
 
 if __name__ == "__main__":
