@@ -24,7 +24,7 @@ def bot():
     incoming_msg = request.values.get("Body", "").lower()
     resp = MessagingResponse()
     msg = resp.message()
-    if "get question" in incoming_msg:
+    if "get question" in incoming_msg or "gq" in incoming_msg:
         msg_to_send = str(get_random_question())
         msg.body(msg_to_send)
     else:
